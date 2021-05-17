@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA33ADF226520D05008BB5CC /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA33ADF126520D05008BB5CC /* InitialViewController.swift */; };
+		CA33ADF426520F91008BB5CC /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA33ADF326520F91008BB5CC /* LocationData.swift */; };
 		CA967C9E2651D8250075B16D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA967C9D2651D8250075B16D /* AppDelegate.swift */; };
 		CA967CA02651D8250075B16D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA967C9F2651D8250075B16D /* SceneDelegate.swift */; };
 		CA967CA22651D8250075B16D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA967CA12651D8250075B16D /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA33ADF126520D05008BB5CC /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		CA33ADF326520F91008BB5CC /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		CA967C9A2651D8250075B16D /* SoundWalk2021.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundWalk2021.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA967C9D2651D8250075B16D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA967C9F2651D8250075B16D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				CA967C9F2651D8250075B16D /* SceneDelegate.swift */,
 				CA967CA12651D8250075B16D /* ViewController.swift */,
 				CA967CA32651D8250075B16D /* Main.storyboard */,
+				CA33ADF126520D05008BB5CC /* InitialViewController.swift */,
+				CA33ADF326520F91008BB5CC /* LocationData.swift */,
 				CA967CA62651D82D0075B16D /* Assets.xcassets */,
 				CA967CA82651D82D0075B16D /* LaunchScreen.storyboard */,
 				CA967CAB2651D82D0075B16D /* Info.plist */,
@@ -144,6 +150,8 @@
 				CA967CA22651D8250075B16D /* ViewController.swift in Sources */,
 				CA967C9E2651D8250075B16D /* AppDelegate.swift in Sources */,
 				CA967CA02651D8250075B16D /* SceneDelegate.swift in Sources */,
+				CA33ADF226520D05008BB5CC /* InitialViewController.swift in Sources */,
+				CA33ADF426520F91008BB5CC /* LocationData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
