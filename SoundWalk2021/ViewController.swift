@@ -15,9 +15,14 @@ class ViewController: UIViewController {
     //MARK: Variables
     var audioPlayer = AVAudioPlayer()
     var delayTimer:Timer?
+    
     let mediumImpactGenerator = UIImpactFeedbackGenerator(style: .heavy)
     let notificationFeedbackGenerator = UINotificationFeedbackGenerator()
-    var tempLocationArray:[CLLocation]
+    
+    var tempLocationArray:[CLLocation] = []
+    
+    //User's current region. Check against this while assigning for both haptic feedback and music switching
+    var currentRegion:String?
     
     
     //MARK: viewDidLoad
@@ -38,11 +43,13 @@ class ViewController: UIViewController {
                 } catch {
                     print(error)
                 }
-        */
+ */
     }
     
     //MARK: Handle New Location Input and Assign Region
     @objc func handleNewLocation(_ notification: NSNotification) {
+        
+        print("HANDLE NEW LOCATION")
         
         //Unwrap notification into its coordinate thing and append the location to the tempArray
         if let userInfo = notification.userInfo{
@@ -51,12 +58,30 @@ class ViewController: UIViewController {
                 tempLocationArray.append(newLocation)
                 //Check if array has more than three points in it. If so, calculate region.
                 if tempLocationArray.count >= 3 {
+                    let coordinate1 = tempLocationArray.last!.coordinate
+                    let coordinate2 = tempLocationArray[tempLocationArray.count - 1].coordinate
+                    let coordinate3 = tempLocationArray[tempLocationArray.count - 2].coordinate
                     
+                    //TEST
+                    print(coordinate1, coordinate2, coordinate3)
+                    
+                    let averagedCoordinate = averageCoordinates(lat1: coordinate1.latitude, lon1: coordinate1.longitude, lat2: coordinate2.latitude, lon2: coordinate2.longitude, lat3: coordinate3.latitude, lon3: coordinate3.longitude)
+                    
+                    //Compare this coordinate with a list of regions and their radii to assign the user to one.
+                    //Make sure the user is actually in the park first though. Put this at the end of the list to avoid unneeded repition of code.
+                    //Need to hang out with jared in the park for this bit
                 }
             }
         }
 
         
+    }
+    
+    private func averageCoordinates(lat1:Double, lon1:Double, lat2:Double, lon2:Double, lat3:Double, lon3:Double) -> CLLocation {
+        let newLat = (lat1 + lat2 + lat3) / 3
+        let newLon = (lon1 + lon2 + lon3) / 3
+        
+        return CLLocation(latitude: newLat, longitude: newLon)
     }
     
     private func haversine(lat1:Double, lon1:Double, lat2:Double, lon2:Double) -> Double {

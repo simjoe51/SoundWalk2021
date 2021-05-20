@@ -42,7 +42,7 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
    public func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]){
         if let newLocation = locations.last{
-            print("(\(newLocation.coordinate.latitude), \(newLocation.coordinate.latitude))")
+            print("(\(newLocation.coordinate.latitude), \(newLocation.coordinate.longitude))")
 
             var locationAdded: Bool
             locationAdded = filterAndAddLocation(newLocation)

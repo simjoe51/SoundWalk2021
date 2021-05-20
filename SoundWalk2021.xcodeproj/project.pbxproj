@@ -17,6 +17,7 @@
 		CA967CAA2651D82D0075B16D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA967CA82651D82D0075B16D /* LaunchScreen.storyboard */; };
 		CA967CB22651DA150075B16D /* large_550_tmp_2F1500074681231-a4qcyidzlj-337bb56932b26bd2c98d56ca890dbfac_2FScreen+Shot+2017-07-14+at+7.23.55+PM.png in Resources */ = {isa = PBXBuildFile; fileRef = CA967CB12651DA150075B16D /* large_550_tmp_2F1500074681231-a4qcyidzlj-337bb56932b26bd2c98d56ca890dbfac_2FScreen+Shot+2017-07-14+at+7.23.55+PM.png */; };
 		CA967CB42652A4930075B16D /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA967CB32652A4930075B16D /* LocationService.swift */; };
+		CA967CB626556C6D0075B16D /* initialBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CA967CB526556C6D0075B16D /* initialBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CA967CAB2651D82D0075B16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA967CB12651DA150075B16D /* large_550_tmp_2F1500074681231-a4qcyidzlj-337bb56932b26bd2c98d56ca890dbfac_2FScreen+Shot+2017-07-14+at+7.23.55+PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large_550_tmp_2F1500074681231-a4qcyidzlj-337bb56932b26bd2c98d56ca890dbfac_2FScreen+Shot+2017-07-14+at+7.23.55+PM.png"; sourceTree = "<group>"; };
 		CA967CB32652A4930075B16D /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		CA967CB526556C6D0075B16D /* initialBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = initialBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		CA967C9C2651D8250075B16D /* SoundWalk2021 */ = {
 			isa = PBXGroup;
 			children = (
+				CA967CB526556C6D0075B16D /* initialBackground.png */,
 				CA967CB12651DA150075B16D /* large_550_tmp_2F1500074681231-a4qcyidzlj-337bb56932b26bd2c98d56ca890dbfac_2FScreen+Shot+2017-07-14+at+7.23.55+PM.png */,
 				CA967C9D2651D8250075B16D /* AppDelegate.swift */,
 				CA967C9F2651D8250075B16D /* SceneDelegate.swift */,
@@ -139,6 +142,7 @@
 				CA967CAA2651D82D0075B16D /* LaunchScreen.storyboard in Resources */,
 				CA967CB22651DA150075B16D /* large_550_tmp_2F1500074681231-a4qcyidzlj-337bb56932b26bd2c98d56ca890dbfac_2FScreen+Shot+2017-07-14+at+7.23.55+PM.png in Resources */,
 				CA967CA72651D82D0075B16D /* Assets.xcassets in Resources */,
+				CA967CB626556C6D0075B16D /* initialBackground.png in Resources */,
 				CA967CA52651D8250075B16D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
