@@ -9,8 +9,15 @@ import UIKit
 import AVFoundation
 import AudioToolbox.AudioServices
 import CoreLocation
+import MapKit
 
 class ViewController: UIViewController {
+    
+    //MARK: Properties
+    @IBOutlet weak var blurLayer: UIVisualEffectView!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    
     
     //MARK: Variables
     var audioPlayer = AVAudioPlayer()
@@ -24,11 +31,24 @@ class ViewController: UIViewController {
     //User's current region. Check against this while assigning for both haptic feedback and music switching
     var currentRegion:String?
     
+    //MARK: Map Variables
+    var tileRenderer: MKTileOverlayRenderer!
+    //var shimmerRenderer: ShimmerRenderer!
+    
     
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //Check if user is in dark mode to determine blur style
+        if traitCollection.userInterfaceStyle == .light {
+                print("Light mode")
+            blurLayer.effect = UIBlurEffect(style: .regular)
+            } else {
+                print("Dark mode")
+                blurLayer.effect = UIBlurEffect(style: .dark)
+            }
         
         //MARK: Old Audio Stuff for Reuse
         /*
@@ -44,7 +64,32 @@ class ViewController: UIViewController {
                     print(error)
                 }
  */
+        //setupTileRenderer()
+        
+        mapView.setUserTrackingMode(.followWithHeading, animated: true)
+        //let initialRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 42.657066, longitude: -73.771605), span: MKCoordinateSpan(latitudeDelta: 0.0005, longitudeDelta: 0.0005))
+        //mapView.region = initialRegion
+        mapView.showsUserLocation = true
+        mapView.showsCompass = false
+       // mapView.setUserTrackingMode(.followWithHeading, animated: true)
+        
+        mapView.delegate = self
+        let location = CLLocation(latitude: 42.657066, longitude: -73.771605)
+        let region = MKCoordinateRegion( center: location.coordinate, latitudinalMeters: CLLocationDistance(exactly: 130)!, longitudinalMeters: CLLocationDistance(exactly: 130)!)
+        mapView.setRegion(mapView.regionThatFits(region), animated: true)
+    } //end viewDidLoad
+    
+    private func setupTileRenderer() {
+        let overlay = WashingtonParkOverlay()
+        overlay.canReplaceMapContent = true
+        mapView.addOverlay(overlay, level: .aboveLabels)
+        tileRenderer = MKTileOverlayRenderer(tileOverlay: overlay)
+        
+        //overlay.minimumZ = 19
+        //overlay.maximumZ = 19
     }
+    
+    
     
     //MARK: Handle New Location Input and Assign Region
     @objc func handleNewLocation(_ notification: NSNotification) {
@@ -100,5 +145,14 @@ class ViewController: UIViewController {
         }
 
 
+} //end main class
+
+// MARK: - MKMapViewDelegate
+extension ViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        return tileRenderer
+    }
 }
+
+
 
