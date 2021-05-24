@@ -39,15 +39,6 @@ class InitialViewController: UIViewController {
 
         //Initialize GPS sesssion and begin collecting points. For the most part, copy code from initial 'RunningMates' project for the LocationData class. Send start signal to above and begin to poll locations with frequencies of a couple seconds. When this happens, run function that gathers the average of the first three returned points. This is sent to the main view controller which decides which cloud the coordinates belong to (if any). Sidenote: if the user is not within a certain radius of the park at all, present an error message that displays this.
         
-      //  self.view.backgroundColor = UIColor(patternImage: UIImage(named: "initialBackground.png")!)
-       // let blurEffect = UIBlurEffect(style: .light)
-        //let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        //blurEffectView.frame = view.frame
-        //view.addSubview(blurEffectView)
-        //view.sendSubviewToBack(blurEffectView)
-
-        
-        
         //MARK: Observers for events taking place elsewhere
         NotificationCenter.default.addObserver(self, selector: #selector(showTurnOnLocationServicesAlert(notification:)), name: Notification.Name(rawValue: "showTurnOnLocationServicesAlert"), object: nil)
     } //end viewDidLoad
@@ -55,6 +46,7 @@ class InitialViewController: UIViewController {
     
     //MARK: viewDidAppear
     override func viewDidAppear(_ animated: Bool) {
+        notificationFeedbackGenerator.prepare()
         //Assuming everything is good, send the user to the home screen and their first piece of music. Add haptics for good vibes and a little tangible feedback because why not 🤷🏻‍♂️
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(animateLabel), userInfo: nil, repeats: true)
         timer?.fire()
@@ -63,6 +55,7 @@ class InitialViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
             performSegue(withIdentifier: "entranceSegue", sender: self)
             timer?.invalidate()
+            notificationFeedbackGenerator.notificationOccurred(.success)
         }
     }
     

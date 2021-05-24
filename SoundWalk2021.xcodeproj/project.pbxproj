@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2203E5265A7A8E00CC16CE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2203E4265A7A8E00CC16CE /* MenuViewController.swift */; };
+		CA2203E7265B340C00CC16CE /* SoundAssets in Resources */ = {isa = PBXBuildFile; fileRef = CA2203E6265B340B00CC16CE /* SoundAssets */; };
 		CA33ADF226520D05008BB5CC /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA33ADF126520D05008BB5CC /* InitialViewController.swift */; };
 		CA33ADF426520F91008BB5CC /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA33ADF326520F91008BB5CC /* LocationData.swift */; };
 		CA967C9E2651D8250075B16D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA967C9D2651D8250075B16D /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA2203E4265A7A8E00CC16CE /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CA2203E6265B340B00CC16CE /* SoundAssets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SoundAssets; sourceTree = "<group>"; };
 		CA33ADF126520D05008BB5CC /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		CA33ADF326520F91008BB5CC /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		CA967C9A2651D8250075B16D /* SoundWalk2021.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundWalk2021.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,8 +77,10 @@
 				CA967C9D2651D8250075B16D /* AppDelegate.swift */,
 				CA967C9F2651D8250075B16D /* SceneDelegate.swift */,
 				CA967CA12651D8250075B16D /* ViewController.swift */,
+				CA2203E6265B340B00CC16CE /* SoundAssets */,
 				CA967CB72656E8EF0075B16D /* WashingtonParkOverlay.swift */,
 				CA967CA32651D8250075B16D /* Main.storyboard */,
+				CA2203E4265A7A8E00CC16CE /* MenuViewController.swift */,
 				CA33ADF126520D05008BB5CC /* InitialViewController.swift */,
 				CA967CB32652A4930075B16D /* LocationService.swift */,
 				CA33ADF326520F91008BB5CC /* LocationData.swift */,
@@ -143,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA967CAA2651D82D0075B16D /* LaunchScreen.storyboard in Resources */,
+				CA2203E7265B340C00CC16CE /* SoundAssets in Resources */,
 				CA967CB22651DA150075B16D /* large_550_tmp_2F1500074681231-a4qcyidzlj-337bb56932b26bd2c98d56ca890dbfac_2FScreen+Shot+2017-07-14+at+7.23.55+PM.png in Resources */,
 				CA967CA72651D82D0075B16D /* Assets.xcassets in Resources */,
 				CA967CB626556C6D0075B16D /* initialBackground.png in Resources */,
@@ -164,6 +171,7 @@
 				CA967CB42652A4930075B16D /* LocationService.swift in Sources */,
 				CA967CB82656E8EF0075B16D /* WashingtonParkOverlay.swift in Sources */,
 				CA33ADF426520F91008BB5CC /* LocationData.swift in Sources */,
+				CA2203E5265A7A8E00CC16CE /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
